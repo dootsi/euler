@@ -1,0 +1,16 @@
+#!/bin/sh
+
+n="$1"
+
+if [ -z $n ] ; then
+    echo please enter a problem number
+    exit 1
+fi
+
+if ! which gcc > /dev/null 2>&1 ; then
+    echo you need gcc to run this program
+    exit 1
+fi
+
+gcc -o /tmp/euler_solution "$1.c"
+/tmp/euler_solution
